@@ -31,14 +31,19 @@
             background: #333;
             color: #fff;
             padding: 10px;
+            display: flex;
+            justify-content: space-around;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
+            padding: 10px;
+            transition: background 0.3s, color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            background: #0056b3;
+            color: #fff;
+            border-radius: 5px;
         }
         footer {
             text-align: center;
@@ -50,9 +55,6 @@
         .section {
             margin-bottom: 40px;
         }
-        .interactive {
-            margin: 20px 0;
-        }
         .image {
             text-align: center;
             margin: 20px 0;
@@ -62,7 +64,34 @@
             height: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
     </style>
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.content');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var initialPage = location.hash ? location.hash.substring(1) : 'introduction';
+            showPage(initialPage);
+
+            var navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var targetId = this.getAttribute('href').substring(1);
+                    showPage(targetId);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
@@ -76,67 +105,67 @@
     </nav>
 
     <div class="container">
-        <h1>Mixed Economy and AI’s Impact on Demand and Supply: Pathways to an Economics of Abundance</h1>
-
-        <div class="section" id="introduction">
+        <div class="content" id="introduction">
+            <h1>Mixed Economy and AI’s Impact on Demand and Supply: Pathways to an Economics of Abundance</h1>
             <h2>Introduction</h2>
             <p>The rapid evolution of artificial intelligence (AI) and advanced technologies has reshaped economic paradigms, particularly within mixed economies that balance market forces with government intervention. One critical sector at the center of this transformation is the microchip industry, which underpins technological development in diverse sectors ranging from consumer electronics to healthcare.</p>
             <div class="image">
-                <img src="https://via.placeholder.com/800x400" alt="AI and microchip technology">
+                <img src="/mnt/data/A_futuristic_city_powered_by_AI_technology_and_mic.png" alt="AI and microchip technology">
                 <p>Figure 1: AI and microchip technology powering modern industries</p>
             </div>
         </div>
 
-        <div class="section" id="mixed-economy">
+        <div class="content" id="mixed-economy">
             <h2>Mixed Economy: Balancing the Market and State</h2>
             <p>A mixed economy combines elements of both market-driven and state-controlled systems. In this model, the government intervenes to correct market failures, while allowing private enterprises to foster innovation and growth.</p>
-            <div class="interactive">
-                <button onclick="alert('In a mixed economy, governments balance private enterprise and public welfare to ensure market efficiency.')">Learn More</button>
+            <div class="image">
+                <img src="/mnt/data/A_visual_representation_of_balancing_market_forces.png" alt="Balancing Market and State">
+                <p>Figure 2: Balancing Market and State in a Mixed Economy</p>
             </div>
         </div>
 
-        <div class="section" id="ai-demand">
+        <div class="content" id="ai-demand">
             <h2>AI’s Impact on Microchip Demand</h2>
             <p>AI technologies have triggered a substantial increase in demand for microchips. Machine learning algorithms, advanced robotics, and cloud computing all require vast computational power, directly contributing to higher demand for microchips.</p>
             <div class="image">
-                <img src="https://via.placeholder.com/800x400" alt="AI-driven demand for microchips">
-                <p>Figure 2: AI-driven demand for microchips in various applications</p>
-            </div>
-            <div class="interactive">
-                <button onclick="alert('The demand for microchips is skyrocketing due to AI advancements across sectors such as automotive, healthcare, and consumer electronics.')">Why Demand is Increasing</button>
+                <img src="/mnt/data/A_depiction_of_AI-driven_demand_for_microchips,_sh.png" alt="AI-driven demand for microchips">
+                <p>Figure 3: AI-driven demand for microchips in various applications</p>
             </div>
         </div>
 
-        <div class="section" id="ai-supply">
+        <div class="content" id="ai-supply">
             <h2>AI’s Impact on Microchip Supply</h2>
             <p>On the supply side, AI significantly enhances production efficiency, allowing for improved manufacturing processes. AI-driven automation helps optimize fabrication processes, manage supply chain complexities, and predict equipment maintenance.</p>
-            <div class="interactive">
-                <button onclick="alert('AI-driven automation is optimizing supply chains, reducing costs, and improving production efficiency in microchip manufacturing.')">How AI Enhances Supply</button>
+            <div class="image">
+                <img src="/mnt/data/AI-enhanced_microchip_production_line_with_robots_.png" alt="AI-enhanced Microchip Supply">
+                <p>Figure 4: AI-enhanced Microchip Supply and Efficiency</p>
             </div>
         </div>
 
-        <div class="section" id="economics-abundance">
+        <div class="content" id="economics-abundance">
             <h2>Pathways to an Economics of Abundance</h2>
             <p>The influence of AI on the demand and supply of microchips points towards a broader economic trend—the potential for an economics of abundance. By boosting both supply and production efficiency, AI minimizes scarcity in key components of technological advancement.</p>
             <div class="image">
-                <img src="https://via.placeholder.com/800x400" alt="Economics of abundance enabled by AI">
-                <p>Figure 3: Economics of abundance enabled by AI and efficient microchip production</p>
+                <img src="/mnt/data/A_concept_image_depicting_economics_of_abundance_e.png" alt="Economics of abundance enabled by AI">
+                <p>Figure 5: Economics of abundance enabled by AI and efficient microchip production</p>
             </div>
         </div>
 
-        <div class="section" id="challenges">
+        <div class="content" id="challenges">
             <h2>Challenges and Considerations</h2>
             <p>While the pathways to abundance are promising, challenges remain. The microchip industry’s supply chain is highly susceptible to geopolitical tensions, as recent conflicts between major powers have shown.</p>
-            <div class="interactive">
-                <button onclick="alert('Geopolitical tensions and supply chain vulnerabilities are significant challenges for the microchip industry.')">Challenges Overview</button>
+            <div class="image">
+                <img src="/mnt/data/A_visualization_of_challenges_in_the_microchip_ind.png" alt="Challenges in Microchip Industry">
+                <p>Figure 6: Challenges and Supply Chain Vulnerabilities in the Microchip Industry</p>
             </div>
         </div>
 
-        <div class="section" id="conclusion">
+        <div class="content" id="conclusion">
             <h2>Conclusion</h2>
             <p>The intersection of AI, the microchip industry, and mixed economic systems presents a unique opportunity to achieve an economics of abundance. By enhancing supply capabilities and broadening demand for innovative applications, AI can contribute to a more prosperous society.</p>
-            <div class="interactive">
-                <button onclick="alert('AI has the potential to create a more prosperous society through economic abundance if challenges are addressed.')">Summary</button>
+            <div class="image">
+                <img src="/mnt/data/An_illustration_of_AI's_impact_on_prosperity,_show.png" alt="AI for Prosperity">
+                <p>Figure 7: AI’s Potential to Create a More Prosperous Society</p>
             </div>
         </div>
     </div>
